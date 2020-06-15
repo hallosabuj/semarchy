@@ -25,7 +25,7 @@ if data['export_editionId']==data['import_editionId']:
     else:
         print(response.status_code)
     print("When both editionId are same")
-elif data['export_editionId']<data['import_editionId']:
+else:
     model_close_url="http://localhost:11111/semarchy/api/rest/app-builder/models/"+data["name"]+"/editions/"+data['import_branchId']+"."+data['import_editionId']+"/close"
     payload={"description":"Closed Successfully"}
     close_response=requests.post(model_close_url,json=payload,auth=HTTPBasicAuth('semadmin','semadmin'))
